@@ -3,7 +3,7 @@
 1.
 写出程序结果
 class Demo
-{	
+{
 	public static void func()//throws Exception
 	{
 		try
@@ -34,7 +34,7 @@ class Demo
 
 ====================================================================
 2.
-写出程序结果	
+写出程序结果
 class Test
 {
 	Test()
@@ -66,7 +66,7 @@ Test
 ====================================================================
 3.
 写出程序结果
-interface A{}  
+interface A{}
 class B implements A
 {
 	public String func()
@@ -91,7 +91,7 @@ class Demo
 
 ====================================================================
 4.
-写出程序结果	
+写出程序结果
 class Fu
 {
 	boolean show(char a)
@@ -111,7 +111,7 @@ class Demo extends Fu
 		{
 			i++;
 			d.show('D');
-		}	
+		}
 	}
 	boolean show(char a)
 	{
@@ -126,7 +126,7 @@ A B
 
 ====================================================================
 5.
-写出程序结果	
+写出程序结果
 interface A{}
 class B implements A
 {
@@ -152,14 +152,14 @@ class Demo
 
 ====================================================================
 6.
-写出程序结果:   
+写出程序结果:
 class Super
 {
 	int i=0;
 	public Super(String a)
 	{
 		System.out.println("A");
-		i=1;	
+		i=1;
 	}
 	public Super()
 	{
@@ -173,7 +173,7 @@ class Demo extends Super
 	{
 		//super();
 		System.out.println("C");
-		i=5;				
+		i=5;
 	}
 	public static void main(String[] args)
 	{
@@ -197,21 +197,16 @@ class Demo
 	public static void main(String[] args)
 	{
 		//补足代码；调用两个函数，要求用匿名内部类
-		Inter in = new Inter()
-		{
-			public void show(int a,int b)
-			{
-			
+	  Inter a = new Inter(){
+			public void show(int a, int b){
+
 			}
-			public void func()
-			{
-			
+			void func(){
+
 			}
 		};
-
-		in.show(4,5);
-		in.func();
-		
+		a.show(1,2);
+		a.func();
 	}
 }
 
@@ -222,10 +217,10 @@ class Demo
 class TD
 {
 	int y=6;
-	class Inner
+	static class Inner
 	{
-		static int y=3;  
-		void show()
+		static int y=3;
+		 void show()
 		{
 			System.out.println(y);
 		}
@@ -252,8 +247,8 @@ class Demo
 {
 	 int show(int a,int b){return 0;}
 }
-下面那些函数可以存在于Demo的子类中。	
-A.public int show(int a,int b){return 0;}//可以，覆盖。	
+下面那些函数可以存在于Demo的子类中。
+A.public int show(int a,int b){return 0;}//可以，覆盖。
 B.private int show(int a,int b){return 0;}//不可以，权限不够。
 C.private int show(int a,long b){return 0;}//可以，和父类不是一个函数。没有覆盖，相当于重载。
 D.public short show(int a,int b){return 0;}//不可以，因为该函数不可以和给定函数出现在同一类中，或者子父类中。
@@ -277,7 +272,7 @@ final:
 
 ====================================================================
 11.
-写出程序结果：  
+写出程序结果：
 class Fu
 {
 	int num=4;
@@ -300,10 +295,10 @@ class T
 	{
 		Fu f=new Zi();
 		Zi z=new Zi();
-		System.out.println(f.num); 
-		System.out.println(z.num); 
-		f.show(); 
-		z.show(); 	
+		System.out.println(f.num);
+		System.out.println(z.num);
+		f.show();
+		z.show();
 	}
 }
 
@@ -328,7 +323,7 @@ interface B
 class C implements A,B
 {
 	//程序代码
-	
+
 	private int a,b;
 	//private int sum;
 	public void add(int a,int b)
@@ -359,14 +354,14 @@ class D
 
 ====================================================================
 13.
-写出程序结果	
+写出程序结果
 class Demo
 {
 	public static void main(String[] args)
 	{
 		try
 		{
-			showExce(); 
+			showExce();
 			System.out.println("A");
 		}
 		catch(Exception e)
@@ -392,18 +387,18 @@ class Demo
 写出程序结果
 class Super
 {
-	int i=0;	
+	int i=0;
 	public Super(String s)
 	{
-		i=1;	
+		i=1;
 	}
 }
 class Demo extends Super
 {
 	public Demo(String s)
 	{
-		
-		i=2;			
+
+		i=2;
 	}
 	public static void main(String[] args)
 	{
@@ -425,7 +420,7 @@ class Super
 }
 class Demo15 extends Super
 {
-	public long get(){return 5;}			
+	public long get(){return 5;}
 	public static void main(String[] args)
 	{
 		Super s=new Demo15();
@@ -441,7 +436,7 @@ class Demo15 extends Super
 16.
 写出程序结果：
 class Demo
-{	
+{
 	public static void func()
 	{
 		try
@@ -476,25 +471,25 @@ class Demo
 ====================================================================
 17.
 class Demo
-{	
+{
 	public void func()
 	{
 		//位置1；
 		new  Inner();
-		
+
 	}
 	class Inner{}
 	public static void main(String[] args)
 	{
 		Demo d=new Demo();
-		// 位置2 
+		// 位置2
 		new Inner();//不可以，因为主函数是静态的。如果访问inner需要被static修饰。
 	}
 }
 
 A.在位置1写 new Inner();//ok
-B.在位置2写 new Inner();		
-C.在位置2写 new d.Inner();//错误，格式错误。	new new Demo().Inner();	
+B.在位置2写 new Inner();
+C.在位置2写 new d.Inner();//错误，格式错误。	new new Demo().Inner();
 D.在位置2写 new Demo.Inner();//错误，因为inner不是静态的。
 
 ====================================================================
@@ -510,8 +505,8 @@ class Demo
 		try
 		{
 			throw new Exc1();
-		}		
-		catch(Exception e)		
+		}
+		catch(Exception e)
 		{
 			System.out.println("Exception");
 		}
@@ -537,12 +532,12 @@ class Demo
 	public static void main(String[] args)
 	{
 		//补足代码；(匿名内部类)
-		
+
 		new Demo().show(new Test()
 		{
 			public void func(){}
 		});
-		
+
 	}
 	void show(Test t)
 	{
@@ -552,37 +547,37 @@ class Demo
 
 ====================================================================
 20.
-写出程序结果	
+写出程序结果
 class Test
-{ 
-	public static String output=""; 
+{
+	public static String output="";
 	public static void foo(int i)
-	{ 
+	{
 		try
-		{ 
+		{
 			if(i==1)
-				throw new Exception(); 	
-			output+="1"; 
-		} 
+				throw new Exception();
+			output+="1";
+		}
 		catch(Exception e)
-		{ 
-			output+="2"; 
-			return; 
-		} 
+		{
+			output+="2";
+			return;
+		}
 		finally
-		{ 
-			output+="3"; 
-		} 
-		output+="4"; 
+		{
+			output+="3";
+		}
+		output+="4";
 	}
 	public static void main(String args[])
-	{ 
+	{
 		foo(0);
 		System.out.println(output);//134
-		foo(1); 
+		foo(1);
 		System.out.println(output); //13423
 	}
-} 
+}
 
 ====================================================================
 21.
@@ -606,16 +601,13 @@ class Circle
 	public static double compare(Circle[] cir)
 	{
 		//程序代码//其实就是在求数组中的最大值。
-		
-		int max = 0;//double max = cir[0].radius;
-
-		for(int x=1; x<cir.length; x++)
-		{
-			if(cir[x].radius>cir[max].radius)
-				max = x;
+		double maxValue = 0;
+		for(Circle temp:cir){
+		    if (temp.radius*temp.radius * temp.pi>maxValue){
+				    maxValue = temp.radius*temp.radius * temp.pi;
+				}
 		}
-
-		return cir[max].radius;
+		return maxValue;
 	}
 }
 class TC
@@ -631,26 +623,26 @@ class TC
 }
 ====================================================================
 23.
-写出程序结果	
+写出程序结果
 public class Demo
-{     
-	private static int j = 0; 
+{
+	private static int j = 0;
 	private static boolean methodB(int k)
 	{
-		j += k; 
-		return true; 
+		j += k;
+		return true;
 	}
 	public static void methodA(int  i)
-	{ 
-        	boolean b;   
-		b = i < 10 | methodB (4); 
-		b = i < 10 || methodB (8); 
+	{
+        	boolean b;
+		b = i < 10 | methodB (4);
+		b = i < 10 || methodB (8);
 	}
 	public static void main (String args[] )
 	{
-		methodA (0); 
+		methodA (0);
 		System.out.println(j); //4
-	} 
+	}
 }
 
 ====================================================================
@@ -658,7 +650,7 @@ public class Demo
 假如我们在开发一个系统时需要对员工进行建模，员工包含 3 个属性：
 姓名、工号以及工资。经理也是员工，除了含有员工的属性外，另为还有一个
 奖金属性。请使用继承的思想设计出员工类和经理类。要求类中提供必要的方
-法进行属性访问。 
+法进行属性访问。
 
 
 
@@ -691,7 +683,7 @@ public int getIndex(char[] arr,char key)
 26.
 补足compare函数内的代码，不许添加其他函数。
 class Circle
-{	
+{
 	private double radius;
 	public Circle(double r)
 	{
@@ -708,7 +700,7 @@ class Circle
 
 
 		return (this.radius>cir.radius)?this: cir;
-		
+
 	}
 }
 class TC
