@@ -42,6 +42,7 @@ class input implements Runnable{
         x = (x-1)%2;
         r.flag = true;
         r.notify();
+
       }
   }
 
