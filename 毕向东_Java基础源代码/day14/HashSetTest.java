@@ -2,21 +2,21 @@
 import java.util.*;
 
 /*
-往hashSet集合中存入自定对象
-姓名和年龄相同为同一个人，重复元素。
+锟斤拷hashSet锟斤拷锟斤拷锟叫达拷锟斤拷锟皆讹拷锟斤拷锟斤拷
+锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷同为同一锟斤拷锟剿ｏ拷锟截革拷元锟截★拷
 
 
 
 
 
 */
-class HashSetTest 
+class HashSetTest
 {
 	public static void sop(Object obj)
 	{
 		System.out.println(obj);
 	}
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		HashSet hs = new HashSet();
 
@@ -27,9 +27,9 @@ class HashSetTest
 //		hs.add(new Person("a4",14));
 
 		//sop("a1:"+hs.contains(new Person("a2",12)));
-			
+
 //		hs.remove(new Person("a4",13));
-		
+
 
 		Iterator it = hs.iterator();
 
@@ -49,7 +49,7 @@ class Person
 		this.name = name;
 		this.age = age;
 	}
-	
+
 	public int hashCode()
 	{
 		System.out.println(this.name+"....hashCode");
@@ -68,7 +68,7 @@ class Person
 		return this.name.equals(p.name) && this.age == p.age;
 	}
 
-	
+
 	public String getName()
 	{
 		return name;
